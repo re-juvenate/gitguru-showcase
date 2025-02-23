@@ -1,14 +1,15 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @config "../tailwind.config.js";
 
 @theme {
-  --font-sans: "departure", sans-serif;
+  --font-sans: 'departure', sans-serif;
 }
 
 @font-face {
   font-family: 'departure';
-  src: url('../src/assets/fonts/DepartureMono-Regular.woff2') format('woff2'),
-       url('../src/assets/fonts/DepartureMono-Regular.woff') format('woff');
+  src:
+    url('../src/assets/fonts/DepartureMono-Regular.woff2') format('woff2'),
+    url('../src/assets/fonts/DepartureMono-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
