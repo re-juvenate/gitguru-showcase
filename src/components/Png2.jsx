@@ -10,7 +10,7 @@ export default function Png2() {
     const context = canvas.getContext('2d');
 
     const frameCount = 91;
-    const currentFrame = (index) => `/src/assets/framesc/${index.toString().padStart(4, '0')}.png`;
+    const currentFrame = (index) => `/framesc/${index.toString().padStart(4, '0')}.png`;
 
     const img = new Image();
     img.src = currentFrame(0);
