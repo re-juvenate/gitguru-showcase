@@ -54,7 +54,8 @@ export default function Png2() {
       ></canvas>
       {showTextbox && (
         <div className="textbox z-50 sticky text-white pt-[190vh] pl-[55vw] text-7xl">
-          <p>GitHub is a platform for version control and collaboration, enabling developers to work on projects together efficiently.</p>
+          <p>Github is the most popular OSS developer platform on the world. Yet, it can be a bit daunting to even get started. Hence, we focus on the lowest denominator of open source contribution - solving issues .
+          </p>
         </div>
       )}
     </div>
