@@ -1,8 +1,39 @@
-# React + Vite
+# GitGuru V2 Landing page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+One stop solution to your github issues and PRs
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Automatic detection of the active web page to determine if it is a GitHub issue page.
+- Injection of the extension UI into the GitHub issue page.
+- Default fetch request to the backend API to retrieve the summary of the issue conversation.
+- Explanation tab: Provides an explanation of the entire issue.
+- Solution tab: Offers possible solutions to the issue.
+
+
+### Installation
+
+1. Clone the repository:
+
+    ```sh
+    git clone https://github.com/re-juvenate/gitguru-showcase.git
+    cd gitguru-showcase
+    ```
+
+2. Install dependencies:
+
+    ```sh
+    npm i
+    ```
+
+3. run the application:
+
+    ```sh
+    npm run dev
+    ```
+
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
