@@ -1,28 +1,21 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import "./Png2.css"
 
 export default function Png2() {
   const canvasRef = useRef(null);
+  const [showTextbox, setShowTextbox] = useState(false);
+  
   useEffect(() => {
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
 
-    // number of images to be sequenced
     const frameCount = 91;
+    const currentFrame = (index) => `/src/assets/framesc/${index.toString().padStart(4, '0')}.png`;
 
-    // Function to generate the filename of the image based on the current index
-    const currentFrame = (index) => {
-      return `/src/assets/framesc/${index.toString().padStart(4, '0')}.png`;
-    };
-
-    // Drawing the initial images on the canvas
     const img = new Image();
     img.src = currentFrame(0);
-    img.onload = function () {
-      context.drawImage(img, 0, 0, canvas.width, canvas.height);
-    };
+    img.onload = () => context.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-    //preloading images
     const preloadImages = () => {
       Array.from({ length: frameCount }, (_, i) => {
         const img = new Image();
@@ -30,13 +23,11 @@ export default function Png2() {
       });
     };
 
-    //update images
     const updateImage = (index) => {
       img.src = currentFrame(index);
       context.drawImage(img, 0, 0, canvas.width, canvas.height);
     };
 
-    // Tracking the user scroll position
     window.addEventListener('scroll', () => {
       const html = document.documentElement;
       const wrap = document.querySelector('.png__sequence');
@@ -45,21 +36,27 @@ export default function Png2() {
       const scrollFraction = scrollTop / maxScrollTop;
       const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount));
       requestAnimationFrame(() => updateImage(frameIndex + 1));
+      
+      if (scrollFraction >= 0.2) setShowTextbox(true);
     });
+    
     preloadImages();
   }, []);
+  
   return (
-
-    <div className="png__sequence">
+    <div className="png__sequence w-full h-full sticky" style={{ position: 'relative' }}>
       <canvas
         ref={canvasRef}
         width={window.innerWidth}
         height={window.innerHeight}
         className="png__sequence__canvas"
         id="canvas"
-      >
-        {' '}
-      </canvas>
+      ></canvas>
+      {showTextbox && (
+        <div className="textbox z-50 sticky text-white pt-[190vh] pl-[55vw] text-7xl">
+          <p>GitHub is a platform for version control and collaboration, enabling developers to work on projects together efficiently.</p>
+        </div>
+      )}
     </div>
   );
 }

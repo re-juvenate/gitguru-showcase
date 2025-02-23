@@ -14,11 +14,11 @@ function Path() {
 
   
   const pathPoints = [
-    { x: 150, y: 100, label: "Project Start", description: "Kickoff and planning phase" },
-    { x: 250, y: 500, label: "Development", description: "Core feature implementation" },
-    { x: 100, y: 900, label: "Testing", description: "Bug fixes and optimizations" },
-    { x: 300, y: 1300, label: "Deployment", description: "Final release and setup" },
-    { x: 200, y: 1700, label: "Launch", description: "Public rollout and monitoring" },
+    { x: 150, y: 100, label: "Reading repo", description: "Reads .md and .rst files" },
+    { x: 250, y: 500, label: "Extraction", description: "files strings, code from readme" },
+    { x: 100, y: 900, label: "Static Analysis", description: "Bug fixes and optimizations" },
+    { x: 300, y: 1300, label: "Static Analysis", description: "Final release and setup" },
+    { x: 200, y: 1700, label: "Research Agent", description: "Public rollout and monitoring" },
   ];
 
   
@@ -137,11 +137,10 @@ function Path() {
 
               {/* Title & Description */}
               <div
-                className={`absolute flex flex-col text-white text-xl uppercase transition-all duration-500 ${
-                  isLeft ? "items-end pr-6" : "items-start pl-6"
+                className={`absolute flex flex-col text-white text-5xl uppercase transition-all duration-500 pl-10 "items-start pl-6"
                 }`}
                 style={{
-                  left: isLeft ? `${point.x - 30}px` : `${point.x + 30}px`,
+                  left: `${point.x + 30}px`,
                   top: `${point.y}px`,
                   transform: "translateY(-50%)",
                 }}
@@ -149,7 +148,7 @@ function Path() {
                 <span className="font-semibold">{point.label}</span>
                 <span
                   ref={(el) => (descriptionRefs.current[index] = el)}
-                  className="opacity-0 translate-y-2 transition-all duration-500"
+                  className="opacity-0 translate-y-2 transition-all duration-500 text-3xl"
                 >
                   {point.description}
                 </span>
