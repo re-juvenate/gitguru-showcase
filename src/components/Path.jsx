@@ -18,8 +18,8 @@ function Path() {
     { x: 150, y: 100, label: "Reading repo", description: "Reads .md and .rst files", image: "repo.png", link: "#repo" },
     { x: 250, y: 500, label: "Extraction", description: "Extracts strings and code", image: "extract.png", link: "#extract" },
     { x: 100, y: 900, label: "Static Analysis", description: "Bug fixes and optimizations", image: "analysis.png", link: "#analysis" },
-    { x: 300, y: 1300, label: "Final Release", description: "Final setup", image: "release.png", link: "#release" },
-    { x: 200, y: 1700, label: "Research Agent", description: "Public rollout", image: "agent.png", link: "#agent" },
+    { x: 300, y: 1300, label: "Issue Summarization", description: "Fetch issue data and comments from GitHub", image: "release.png", link: "#release" },
+    { x: 200, y: 1700, label: "Chat Interactions", description: "Provide LLM chat-based interactions for various tasks", image: "agent.png", link: "#agent" },
   ];
 
   const generateBezierPath = () => {
@@ -92,7 +92,7 @@ function Path() {
       </div>
       {currentTitle && (
         <a href={currentLink} target="_blank" rel="noopener noreferrer" className="absolute right-10 top-1/2 transform -translate-y-1/2">
-          <img src={currentTitle} alt="Dynamic" className="w-48 h-48 object-cover border-2 border-white" />
+          <img src={currentTitle} alt="Dynamic" className="w-48 h-48 right-20 fixed object-cover border-2 border-white" />
         </a>
       )}
     </div>
