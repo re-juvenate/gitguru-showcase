@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Hero from './components/hero';
+import Hero from './components/Hero';
 import Png2 from './components/Png2';
 import Path from './components/Path';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 
 function App() {
   const [count, setCount] = useState(0);
