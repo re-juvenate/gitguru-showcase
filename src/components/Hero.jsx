@@ -11,12 +11,12 @@ function Hero() {
           <div className="text-3xl text-center">
             One stop solution to your github issues and PRs
           </div>
-          <img
+          {/* <img
             src="https://github.com/re-juvenate/gitGuru-backend/raw/main/assets/logo.png"
             alt="GitGuru Logo"
             className="lg:w-1/2"
             style={{ imageRendering: 'pixelated' }}
-          />
+          /> */}
         </div>
       </div>
     </div>
