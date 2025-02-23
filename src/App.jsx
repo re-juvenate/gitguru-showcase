@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Hero from './components/hero';
 import Png2 from './components/Png2';
+import Path from './components/Path';
 function App() {
   const [count, setCount] = useState(0);
 
@@ -8,7 +9,7 @@ function App() {
     <>
       <Hero />
       <Png2 />
-    <div className="bg-amber-300 h-screen"></div>
+      <Path />
     </>
   );
 }
